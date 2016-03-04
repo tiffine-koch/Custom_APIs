@@ -60,16 +60,23 @@ var server = http.createServer(function(req, res) {
           res.write(data);
 
         case 'bday':
-          // var timestamp = Date.now();
-          // res.write(timestamp + '\n');
           var bday = urlParts;
           var month = bday[0];
           var day = bday[1];
           var year = bday[2];
           var date = year + month + day;
           var bdayObj = {};
-          bdayObj.date = moment(date, 'L');
+          // bdayObj.date = moment(date, 'll');
+          // bdayObj.date = moment(date, 'L');
+          var date = moment(date, 'YYYY/MM/DD');
+          var month = date.format('MMMM');
+          var day = date.format('D');
+          var year = date.format('YYYY');
+          var dayName = date.format('dddd');
+          var formatted = dayName + ", " + month + " " + day + ", " + year;
+          bdayObj.date = formatted;
           bdayObj = JSON.stringify(bdayObj);
+          console.log('bdayObj', bdayObj);
           res.write(bdayObj)
           break;
 
@@ -84,26 +91,3 @@ server.listen(PORT, function(err) {
 });
 
 // curl -X POST localhost:3000/square
-
-// case 'bday':
-//   // var timestamp = Date.now();
-//   // res.write(timestamp + '\n');
-//   var birthday = urlParts;
-//   var month = birthday[0];
-//   var day = birthday[1];
-//   var year = birthday[2];
-//   var dateString = year + month + day;
-//   var bdayObj = {};
-//   var date = moment(dateString, 'YYYY/MM/DD');
-//   var month = date.format('MMMM');
-//   var day = date.format('D');
-//   var year = date.format('YYYY');
-//   var dayName = date.format('dddd');
-//   var formatted = dayName + ", " + month + " " + day + ", " + year;
-//   dateObj.date = formatted;
-//   bdayObj = JSON.stringify(bdayObj);
-//   res.write(bdayObj)
-//   break;
-//
-// }
-// }

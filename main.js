@@ -40,6 +40,8 @@ function getSquare() {
     type: "GET",
     success: function(data) {
       data = JSON.parse(data);
+      $("#squareOutput").html(data);
+
     }
   })
 }
@@ -53,6 +55,7 @@ function getSum() {
     type: "GET",
     success: function(data) {
       data = JSON.parse(data);
+      $("#sumOutput").html(data);
     }
   })
 }
