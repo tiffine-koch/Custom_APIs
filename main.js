@@ -2,8 +2,6 @@
 
 $(document).ready(init);
 
-var email, square, sum;
-
 function init() {
   $('#emailClick').on('click', getEmail);
   $('#squareClick').on('click', getSquare);
@@ -16,7 +14,9 @@ function init() {
 function getEmail() {
   console.log('email click');
   var emailUrl = $('#email').val();
-  var location = "http://localhost3000/gravatar/"
+  console.log('email click', emailUrl);
+
+  var location = "http://localhost8000/email/"
   var url = location + emailUrl;
 
   $.ajax({
@@ -26,43 +26,47 @@ function getEmail() {
       data = JSON.parse(data);
       var image = data.url;
       var $image = $("<img>").attr("src", image).addClass("image");
-      $image.appendTo($("#gravatar"));
+      $("#gravatar").append(image);
     }
   })
 }
 
 function getSquare() {
   var squareUrl = $('#square').val();
-  var url = squareUrl;
+  console.log(squareUrl);
+  var location = "http://localhost8000/square/";
+  var url = location + squareUrl;
 
   $.ajax({
     url: url,
     type: "GET",
     success: function(data) {
       data = JSON.parse(data);
-      $("#squareOutput").html(data);
-
+      var square = $('<p>').text(data);
+      $("#squareOutput").append(square);
     }
   })
 }
 
 function getSum() {
   var sumUrl = $('#sum').val();
-  var url = sumUrl;
+  var location = "http://localhost8000/sum/";
+  var url = location + sumUrl;
 
   $.ajax({
     url: url,
     type: "GET",
     success: function(data) {
       data = JSON.parse(data);
-      $("#sumOutput").html(data);
+      var sum = $('<p>').text(data);
+      $("#sumOutput").append(sum);
     }
   })
 }
 
 function getSent() {
   var sentUrl = $("#sent").val()
-  var location = "http://localhost:3000/sentence/"
+  var location = "http://localhost:8000/sentence/"
   var url = location + sentUrl;
 
   $.ajax({
@@ -70,16 +74,19 @@ function getSent() {
     type: "GET",
     success: function(data) {
       data = JSON.parse(data);
-      $("#wordOutput").html("Total words: " + data.wordCount)
-      $("#letterOuput").html("Total letters: " + data.letterCount)
-      $("#avgOutput").html("Average words: " + Math.round(data.avgWordCount * 100) / 100)
+      var wordCount = $('<p>').text('Total Words ' + data.wordCount);
+      var letterCount = $('<p>').text('Total Letters ' + data.letterCount);
+      var avgWordCount = $('<p>').text('Avg. Word Length ' + data.avgWordCount);
+      $("#wordOutput").append(wordCount);
+      $("#letterOuput").append(letterCount);
+      $("#avgOutput").append(avgWordCount);
     }
   })
 }
 
 function getBday() {
   var bday = $("#bday").val();
-  var location = "http://localhost:3000/birthday/";
+  var location = "http://localhost:8000/birthday/";
   var url = location + bday;
 
   $.ajax({
@@ -87,7 +94,8 @@ function getBday() {
     type: "GET",
     success: function(data) {
       data = JSON.parse(data);
-      $("#bdayOutput").html("Date: " + data.date);
+      var output = $('<p>').text("Date: " + data.date);
+      $("#bdayOutput").append(output);
     }
   })
 }

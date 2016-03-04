@@ -4,11 +4,11 @@ var http = require('http');
 var moment = require('moment');
 var fs = require('fs');
 var md5 = require('md5');
-// var util = require('./util');
 
 const PORT = 8000;
 
 //cade's suggestion for cross-origin solution
+//fs.read - read from one server
 var server = http.createServer(function(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Request-Method', '*');
@@ -35,6 +35,7 @@ var server = http.createServer(function(req, res) {
           var num = parseInt(urlParts[0]);
           var square = Math.pow(num, 2);
           square = square.toString();
+          console.log(square.toString());
           res.write(square);
           break;
 
@@ -48,16 +49,14 @@ var server = http.createServer(function(req, res) {
           break;
 
         case 'sentence':
-          var sentence = decodeURI(urlParts[0]);
-          var statsObj = {}
+          var sentence = decodeURI(urlParts[0]).toLowerCase();
+          var stats = {}
           console.log('sentence:', sentence);
-          res.write( JSON.stringify(statsObj) );
-          var letterMatch = sentence.match(/[a-z]/ig) || [];
-          stats.letterCount = letterMatch.length;
-          stats.wordCount = sentence.split(' ').length;
-          stats.avgWordCount = stats.letterCount / stats.wordCount;
-          var data = JSON.stringify(data);
-          res.write(data);
+            var letterMatch = sentence.match(/[a-z]/ig) || [];
+            stats.letterCount = letterMatch.length;
+            stats.wordCount = sentence.split(' ').length;
+            stats.avgWordCount = stats.letterCount / stats.wordCount;
+          res.write( JSON.stringify(stats) );
 
         case 'bday':
           var bday = urlParts;
@@ -66,8 +65,6 @@ var server = http.createServer(function(req, res) {
           var year = bday[2];
           var date = year + month + day;
           var bdayObj = {};
-          // bdayObj.date = moment(date, 'll');
-          // bdayObj.date = moment(date, 'L');
           var date = moment(date, 'YYYY/MM/DD');
           var month = date.format('MMMM');
           var day = date.format('D');
