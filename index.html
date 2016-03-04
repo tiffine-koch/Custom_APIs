@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gravatar</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+</head>
+<div class="page-header">
+  <h1>Fun   <small>... with urls.</small></h1>
+</div>
+
+<body>
+  <div class="container">
+
+    <div class="form-group">
+      <div class="row">
+        <div class="column col-xs-12 col-sm-6 col-md-6">
+          <label for="inputTask">See your avatar</label>
+          <input id="email" type="name" class="form-control" placeholder="Enter email url" value="" required>
+          <button id="emailClick" class="btn btn-info">Get Image!</button>
+        </div>
+        <div id="gravatar" class="col-xs-12 col-sm-6 col-md-6"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column col-xs-12 col-sm-6 col-md-6">
+        <label for="inputTask" class="">Find the square value of your query string</label>
+        <input id="square" type="name" class="form-control" placeholder="Enter square url" value="" required>
+        <button id="squareClick" class="btn btn-warning">Square It!</button>
+      </div>
+      <div id="sqaureOutput" class="col-xs-12 col-sm-6 col-md-6"></div>
+    </div>
+
+    <div class="row">
+      <div class="column col-xs-12 col-sm-6 col-md-6">
+        <label for="inputTask" class="">Find the sum of your query string</label>
+        <input id="sum" type="name" class="form-control" placeholder="Enter sum url" value="" required>
+        <button id="sumClick" class="btn btn-primary">Sum It!</button>
+      </div>
+    </div>
+    <div id="sumOutput" class="col-xs-12 col-sm-6 col-md-6"></div>
+
+    <div class="row">
+      <div class="column col-xs-12 col-sm-6 col-md-6">
+        <label for="inputTask" class="">Find the words stats of your query string</label>
+        <input id="sent" type="name" class="form-control" placeholder="Enter sentence url" value="" required>
+        <button id="sentClick" class="btn btn-success">Count It!</button>
+      </div>
+    </div>
+    <div id="wordOutput" class="col-xs-12 col-sm-6 col-md-6"></div>
+    <div id="letterOutput" class="col-xs-12 col-sm-6 col-md-6"></div>
+    <div id="avgOutput" class="col-xs-12 col-sm-6 col-md-6"></div>
+
+    <div class="row">
+      <div class="column col-xs-12 col-sm-6 col-md-6">
+        <label for="inputTask" class="">Find your birthday in your query string</label>
+        <input id="bday" type="name" class="form-control" placeholder="Enter birthday url" value="" required>
+        <!-- <input id="day" type="number" class="form-control" placeholder="Enter birthday url" value="" required>
+        <input id="year" type="number" class="form-control" placeholder="Enter birthday url" value="" required> -->
+        <button id="bdayClick" class="btn btn-danger">Bday Fun!</button>
+      </div>
+    </div>
+    <div id="bdayOutput" class="col-xs-12 col-sm-6 col-md-6"></div>
+  </div>
+</div>
+
+  <script src="http://momentjs.com/downloads/moment.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

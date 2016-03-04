@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gravatar</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<div class="page-header">
+  <h1>Fun   <small>... with urls.</small></h1>
+</div>
+
+<body>
+  <div class="container">
+
+    <div class="form-group">
+      <div class="row">
+        <div class="column col-xs-12 col-sm-6 col-md-6">
+          <label for="inputTask">See your avatar</label>
+          <input id="email" type="name" placeholder="Enter email url" value="" required>
+          <button id="emailClick" class="btn btn-info">Get Image!</button>
+        </div>
+        <div id="gravatar" class="col-xs-12 col-sm-6 col-md-6"></div>
+      </div>
+    </div>
+      <!-- <div class="column col-xs-12 col-sm-6 col-md-6">
+        <label for="inputTask" class="col-xs-12 col-sm-7 col-md-7">See your avatar</label>
+        <input id="email" type="name" class="form-control col-xs-12 col-sm-7 col-md-7" placeholder="Enter email url" value="" required>
+        <button id="emailClick" class="btn btn-info">Get Image!</button>
+        <div id="gravatar" class="col-xs-12 col-sm-6 col-md-6"></div>
+      </div> -->
+
+
+      <div class="row col-xs-12 col-sm-7 col-md-7">
+        <label for="inputTask" class="col-xs-12 col-sm-7 col-md-7">Find the square value of your query string</label>
+        <input id="square" type="name" class="form-control col-xs-12 col-sm-6 col-md-6" placeholder="Enter square url" value="" required>
+        <button id="squareClick" class="btn btn-warning">Square It!</button>
+        <div id="sqaureOutput" class="col-xs-12 col-sm-6 col-md-6"></div>
+      </div>
+
+      <div class="row col-xs-12 col-sm-6 col-md-6">
+        <label for="inputTask" class="col-xs-12 col-sm-6 col-md-7">Find the sum of your query string</label>
+        <input id="sum" type="name" class="form-control col-xs-12 col-sm-6 col-md-6" placeholder="Enter sum url" value="" required>
+        <button id="sumClick" class="btn btn-primary">Sum It!</button>
+        <div id="sumOutput" class="col-xs-12 col-sm-6 col-md-6"></div>
+      </div>
+
+      <div class="row col-xs-12 col-sm-6 col-md-6">
+        <label for="inputTask" class="col-xs-12 col-sm-6 col-md-7">Find the word count of your query string</label>
+        <input id="sum" type="name" class="form-control col-xs-12 col-sm-6 col-md-6" placeholder="Enter sentence url" value="" required>
+        <button id="sumClick" class="btn btn-primary">Sum It!</button>
+        <div id="sumOutput" class="col-xs-12 col-sm-6 col-md-6"></div>
+      </div>
+
+      <div class="row col-xs-12 col-sm-6 col-md-6">
+        <label for="inputTask" class="col-xs-12 col-sm-6 col-md-7">Find your birthday</label>
+        <input id="sum" type="name" class="form-control col-xs-12 col-sm-6 col-md-6" placeholder="Enter birthday url" value="" required>
+        <button id="sumClick" class="btn btn-primary">Sum It!</button>
+        <div id="sumOutput" class="col-xs-12 col-sm-6 col-md-6"></div>
+      </div>
+  </div>
+</div>
+
+  <script src="http://momentjs.com/downloads/moment.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
