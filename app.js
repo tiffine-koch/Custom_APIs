@@ -6,7 +6,7 @@ var fs = require('fs');
 var md5 = require('md5');
 // var util = require('./util');
 
-const PORT = 3000;
+const PORT = 8000;
 
 //cade's suggestion for cross-origin solution
 var server = http.createServer(function(req, res) {

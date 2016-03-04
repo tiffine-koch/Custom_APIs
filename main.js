@@ -87,7 +87,7 @@ function getBday() {
     type: "GET",
     success: function(data) {
       data = JSON.parse(data);
-      $("#date").html("Date: " + data.date);
+      $("#bdayOutput").html("Date: " + data.date);
     }
   })
 }
