@@ -65,12 +65,7 @@ var server = http.createServer(function(req, res) {
           var year = bday[2];
           var date = year + month + day;
           var bdayObj = {};
-          var date = moment(date, 'YYYY/MM/DD');
-          var month = date.format('MMMM');
-          var day = date.format('D');
-          var year = date.format('YYYY');
-          var dayName = date.format('dddd');
-          var formatted = dayName + ", " + month + " " + day + ", " + year;
+          var date = moment(date, 'llll');
           bdayObj.date = formatted;
           bdayObj = JSON.stringify(bdayObj);
           console.log('bdayObj', bdayObj);

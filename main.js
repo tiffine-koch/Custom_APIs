@@ -16,17 +16,18 @@ function getEmail() {
   var emailUrl = $('#email').val();
   console.log('email click', emailUrl);
 
-  var location = "http://localhost8000/email/"
+  var location = "http://localhost:8000/email/"
   var url = location + emailUrl;
 
   $.ajax({
     url: url,
-    type: "GET",
+    // type: "GET",
     succcess: function(data) {
       data = JSON.parse(data);
       var image = data.url;
+      console.log('image:', image);
       var $image = $("<img>").attr("src", image).addClass("image");
-      $("#gravatar").append(image);
+      $("#gravatar").append($image);
     }
   })
 }
@@ -34,7 +35,7 @@ function getEmail() {
 function getSquare() {
   var squareUrl = $('#square').val();
   console.log(squareUrl);
-  var location = "http://localhost8000/square/";
+  var location = "http://localhost:8000/square/";
   var url = location + squareUrl;
 
   $.ajax({
@@ -50,7 +51,7 @@ function getSquare() {
 
 function getSum() {
   var sumUrl = $('#sum').val();
-  var location = "http://localhost8000/sum/";
+  var location = "http://localhost:8000/sum/";
   var url = location + sumUrl;
 
   $.ajax({
